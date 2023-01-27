@@ -1,0 +1,24 @@
+body {
+    margin: auto;
+    padding: 50px;
+    text-align: center;
+}
+table {
+    border-collapse:collapse;
+    width: 100%;
+}
+table, td, th {
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    margin: 15px 16px;
+
+}
+label {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 30px 25px;
+}
