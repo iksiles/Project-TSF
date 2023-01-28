@@ -49,7 +49,7 @@
                     <td>{{ $weps->nacion }}</td>
                     <td>{{ $weps->categoria }}</td>
                     <td>{{ $weps->municiones }}</td>
-                    <td><img src="../img/weapons/{{ $weps->imgW }}" alt="img" width="240px" height="160px"></td>
+                    <td><img src="{{ url('/img/weapons/'.$weps->imgW) }}" alt="img" width="240px" height="160px"></td>
                     <td>
                         <a class="btn btn-secondary" href="{{ route('Tsf.editW', $weps->id) }}">Editar</a>
                         <a class="btn btn-danger" href="{{ route('Tsf.confirmW',$weps->id) }}">Borrar<a>

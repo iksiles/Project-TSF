@@ -49,7 +49,7 @@
                     <td>{{ $tsfs->nacionalidad }}</td>
                     <td>{{ $tsfs->anyo }}</td>
                     <td>{{ $tsfs->motores }}</td>
-                    <td><img src="../img/tsf/{{ $tsfs->img }}" alt="img" width="160px" height="240px"></td>
+                    <td><img src="{{ url('img/tsf/'.$tsfs->img) }}" alt="img" width="160px" height="240px"></td>
                     <td>
                         <a class="btn btn-secondary" href="{{ route('Tsf.edit', $tsfs->id) }}">Editar</a>   
 

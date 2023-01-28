@@ -53,7 +53,7 @@
                     <td>{{ $vars->nacionalidad }}</td>
                     <td>{{ $vars->anyo }}</td>
                     <td>{{ $vars->motores }}</td>
-                    <td><img src="../img/variants/{{ $vars->img }}" alt="img" width="160px" height="240px"></td>
+                    <td><img  src="{{ url('img/variants/'.$vars->img) }}" alt="img" width="160px" height="240px"></td>
                     <td>
                         <a class="btn btn-secondary" href="{{ route('Tsf.editV', $vars->id) }}">Editar</a>   
 
