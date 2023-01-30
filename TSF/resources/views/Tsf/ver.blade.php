@@ -21,7 +21,7 @@
     <h2 style="margin: 30px 16px;">{{ $tsf->modelo }}</h2>
 
     <div class="container" style="display: flex; margin: 15px 16px;">
-        <img src="/img/tsf/{{ $tsf->img }}" alt="img" width="260px" height="360px">
+        <img src="{{ url('img/tsf/'.$tsf->img) }}" alt="img" width="260px" height="360px">
         <div style="display: flex; align-items: flex-start; flex-direction: column; margin: 0px 25px;">
             <label style="margin: 0px auto 30px;"><strong>Nacion desarrolladora:</strong> {{ $tsf->nacionalidad }}</label>
 

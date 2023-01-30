@@ -142,7 +142,9 @@ class TsfController extends Controller
     public function destroy($id)
     {
         $tsf = Tsf::findOrFail($id);
-        unlink(public_path('img/tsf/'.$tsf->img));
+        if (File::exists(public_path('img/tsf/'.$tsf->img))) {
+            unlink(public_path('img/tsf/'.$tsf->img));
+        }
         $tsf->delete();
         return redirect()->route('Tsf.index')->with('success', 'El TSF ha sido removido de la BDD');
     }

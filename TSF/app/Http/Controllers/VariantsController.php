@@ -148,7 +148,9 @@ class VariantsController extends Controller
     public function destroy($id)
     {
         $var = Variants::findOrFail($id);
-        unlink(public_path('img/variants/'.$var->img));
+        if (File::exists(public_path('img/variants/'.$var->img))) {
+            unlink(public_path('img/variants/'.$var->img));
+        }
         $var->delete();
         return redirect()->route('Tsf.variants')->with('success', 'El TSF ha sido removido de la BDD');
     }

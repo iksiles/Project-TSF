@@ -21,7 +21,7 @@
     <h2 style="margin: 30px 16px;">{{ $wep->arma }}</h2>
 
     <div class="container" style="display: flex; margin: 15px 16px;">
-        <img src="../../../img/weapons/{{ $wep->imgW }}" alt="img" width="360px" height="240px">
+        <img src="{{ url('img/weapons/'.$weps->imgW) }}" alt="img" width="360px" height="240px">
         <div style="display: flex; align-items: flex-start; flex-direction: column; margin: 0px 25px;">
             <label style="margin: 0px auto 30px;"><strong>Nacion desarrolladora:</strong> {{ $wep->nacion }}</label>
 

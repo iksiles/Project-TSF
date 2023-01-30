@@ -200,7 +200,9 @@ class WeaponsController extends Controller
     public function destroy($id)
     {
         $wep = Weapons::findOrFail($id);
-        unlink(public_path('img/weapons/'.$wep->imgW));
+        if (File::exists(public_path('img/weapons/'.$wep->imgW))) {
+            unlink(public_path('img/weapons/'.$wep->imgW));
+        }
         $wep->delete();
         return redirect()->route('Tsf.weapons')->with('success', 'El TSF ha sido removido de la BDD');
     }
