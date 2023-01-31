@@ -1,0 +1,33 @@
+nav {
+    margin: 0px;
+    padding: auto 16px;
+    div{
+        text-align: center;
+    }
+
+    a {
+        margin: 0px 15px;
+    }
+}
+
+h2 {
+    margin: 30px 16px;
+}
+
+#containetor {
+    margin: 15px 16px;
+    #portada {
+        width: 260px;
+        height: 360px;
+    }
+    #labeler {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 0px 25px;
+        label {
+            margin: 0px 30px 30px;
+        }
+    }
+}
+

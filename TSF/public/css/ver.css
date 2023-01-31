@@ -1,0 +1,33 @@
+nav {
+  margin: 0px;
+  padding: auto 16px;
+}
+nav div {
+  text-align: center;
+}
+nav a {
+  margin: 0px 15px;
+}
+
+h2 {
+  margin: 30px 16px;
+}
+
+#containetor {
+  margin: 15px 16px;
+}
+#containetor #portada {
+  width: 260px;
+  height: 360px;
+}
+#containetor #labeler {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0px 25px;
+}
+#containetor #labeler label {
+  margin: 0px 30px 30px;
+}
+
+/*# sourceMappingURL=ver.css.map */

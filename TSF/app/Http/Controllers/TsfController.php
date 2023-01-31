@@ -142,7 +142,7 @@ class TsfController extends Controller
     public function destroy($id)
     {
         $tsf = Tsf::findOrFail($id);
-        if (File::exists(public_path('img/tsf/'.$tsf->img))) {
+        if (file_exists(public_path('img/tsf/'.$tsf->img))) {
             unlink(public_path('img/tsf/'.$tsf->img));
         }
         $tsf->delete();

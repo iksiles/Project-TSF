@@ -16,11 +16,12 @@ class VariantsController extends Controller
      */
     public function index()
     {
-        $var = Variants::orderBy('id','asc')->paginate(15);
+        $var = Variants::orderBy('modelo','asc')->paginate(15);
         $vars = Variants::all();
         if (Variants::exists($vars)) {
-            $modelORG = $vars[0]->modelo_ORG;
-            $tsf = Tsf::where('modelo','=',$modelORG)->get();
+            foreach($vars as $varss) {
+                $tsf = Tsf::where('modelo','=',$varss->modelo_ORG)->get();
+            }
             return view('Tsf.Variants', ['var'=>$var, 'tsf'=>$tsf]);
         } else {
             return view('Tsf.Variants', ['var'=>$var]);
@@ -148,7 +149,7 @@ class VariantsController extends Controller
     public function destroy($id)
     {
         $var = Variants::findOrFail($id);
-        if (File::exists(public_path('img/variants/'.$var->img))) {
+        if (file_exists(public_path('img/variants/'.$var->img))) {
             unlink(public_path('img/variants/'.$var->img));
         }
         $var->delete();

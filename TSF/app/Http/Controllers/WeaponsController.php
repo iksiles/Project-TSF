@@ -200,7 +200,7 @@ class WeaponsController extends Controller
     public function destroy($id)
     {
         $wep = Weapons::findOrFail($id);
-        if (File::exists(public_path('img/weapons/'.$wep->imgW))) {
+        if (file_exists(public_path('img/weapons/'.$wep->imgW))) {
             unlink(public_path('img/weapons/'.$wep->imgW));
         }
         $wep->delete();

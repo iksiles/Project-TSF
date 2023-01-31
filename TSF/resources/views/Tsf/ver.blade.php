@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 
-<head>
-    <html lang="en">
-    <meta charset="UTF-8">
-    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+<head id="app">
+    <meta charset="utf-8">
+    @include('Tsf.layouts.boot')
+    <link rel="stylesheet" href="{{ asset('css/ver.css')}}">
     <title>TSF - {{ $tsf->modelo }}</title>
 </head>
 <body class="bg-dark text-light">
-    <nav style="margin: 0px; padding: auto 16px;" class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('Tsf.index') }}">Ver listado TSF</a>
         </div>
     </nav>
     
 
-    <h2 style="margin: 30px 16px;">{{ $tsf->modelo }}</h2>
+    <h2>{{ $tsf->modelo }}</h2>
 
-    <div class="container" style="display: flex; margin: 15px 16px;">
-        <img src="{{ url('img/tsf/'.$tsf->img) }}" alt="img" width="260px" height="360px">
-        <div style="display: flex; align-items: flex-start; flex-direction: column; margin: 0px 25px;">
-            <label style="margin: 0px auto 30px;"><strong>Nacion desarrolladora:</strong> {{ $tsf->nacionalidad }}</label>
-
-            <label style="margin: 30px;"><strong>Entrada en servicio:</strong> {{ $tsf->anyo }}</label>
-
-            <label style="margin: 30px;"><strong>Planta motriz:</strong> {{ $tsf->motores }}</label>
+    <div id="containetor" class="container d-flex">
+        <img id="portada" src="{{ url('img/tsf/'.$tsf->img) }}" alt="img">
+        <div id="labeler">
+            <label><strong>Nacion desarrolladora:</strong> {{ $tsf->nacionalidad }}</label>
+            <label><strong>Entrada en servicio:</strong> {{ $tsf->anyo }}</label>
+            <label><strong>Planta motriz:</strong> {{ $tsf->motores }}</label>
+            <div class="d-flex flex-start flex-column mx-4">
+                <h3>Variantes</h3>
+            @foreach($var as $vars)
+                <a href="{{ route('Tsf.showV', $vars->id) }}">{{ $vars->modelo }}</a>
+            @endforeach
+            </div>
         </div>
-        <div class="d-flex flex-start flex-column mx-4">
-            <h3>Variantes</h3>
-        @foreach($var as $vars)
-            <a href="{{ route('Tsf.showV', $vars->id) }}">{{ $vars->modelo }}</a>
-        @endforeach
+        <div class="container">
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-90" src="{{url('img/tsf/Shiranui/1.png')}}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-90" src="{{url('img/tsf/Shiranui/2.png')}}" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                <img class="d-block w-90" src="{{url('img/tsf/Shiranui/3.png')}}" alt="Third slide">
+            </div>
         </div>
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
     </div>
+</div>
+</div>
+
+<script>
+    // $('.carousel').carousel({
+        //     interval: 2000
+        // });
+        // $()
+
+    </script>
 
 </body>
 </html>
