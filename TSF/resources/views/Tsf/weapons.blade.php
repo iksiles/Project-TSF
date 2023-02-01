@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Armas - Listado</title>
         @include('Tsf.layouts.boot')
-        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     </head>
 
     <body class="bg-dark">
@@ -17,7 +17,7 @@
                 <a class="navbar-brand" href="{{ route('Tsf.createV') }}">Añade una Variante a la BDD</a>
             </div>
         </nav>
-        <h2 style="margin: 40px auto 50px" class="text-light text-center">Listado de Armas en uso</h2>
+        <h2 class="text-light text-center">Listado de Armas en uso</h2>
         
 
         @if ($message = Session::get('success'))

@@ -16,23 +16,25 @@ h2 {
 #containetor {
   margin: 15px 16px;
 }
-#containetor #portada {
+#containetor img {
   width: 220px;
   height: 360px;
 }
-#containetor #labeler {
+#containetor div {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   margin: 0px 25px;
 }
-#containetor #labeler label {
+#containetor div label {
   margin: 0px 30px 30px;
+  flex-direction: column;
 }
-#containetor #labeler div {
+#containetor div div {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  margin: 30px 0px;
 }
 
-/*# sourceMappingURL=ver.css.map */
+/*# sourceMappingURL=verV.css.map */

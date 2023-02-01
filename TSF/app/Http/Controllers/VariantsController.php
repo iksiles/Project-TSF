@@ -17,15 +17,8 @@ class VariantsController extends Controller
     public function index()
     {
         $var = Variants::orderBy('modelo','asc')->paginate(15);
-        $vars = Variants::all();
-        if (Variants::exists($vars)) {
-            foreach($vars as $varss) {
-                $tsf = Tsf::where('modelo','=',$varss->modelo_ORG)->get();
-            }
-            return view('Tsf.Variants', ['var'=>$var, 'tsf'=>$tsf]);
-        } else {
+
             return view('Tsf.Variants', ['var'=>$var]);
-        }
 
     }
 

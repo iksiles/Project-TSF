@@ -18,7 +18,7 @@ class Variants extends Model
         return Variants::all();
     }
 
-    public function tsfV() {
-        return $this->belongTo(Tsf::class, 'modelo');
+    public function tsfs() {
+        return $this->belongsTo(Tsf::class, 'modelo_ORG', 'modelo');
     }
 }

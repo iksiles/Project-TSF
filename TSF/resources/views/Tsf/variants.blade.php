@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Variantes - Listado</title>
         @include('Tsf.layouts.boot')
-        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     </head>
 
     <body class="bg-dark">
@@ -17,7 +17,7 @@
                 <a class="navbar-brand" href="{{ route('Tsf.createW') }}">Añade un Arma a la BDD</a>
             </div>
         </nav>
-        <h2 style="margin: 40px auto 50px" class="text-light text-center">Listado de Variantes operativas</h2>
+        <h2 class="text-light text-center">Listado de Variantes operativas</h2>
         
 
         @if ($message = Session::get('success'))
@@ -43,9 +43,7 @@
             @foreach($var as $vars)
                 <tr>
                     <td><a class="btn btn-light text-light" href="{{ route('Tsf.showV', $vars->id) }}">Ver</a></td>
-                    @foreach($tsf as $tsfs)
-                    <td><a href="{{ route('Tsf.show', $tsfs->id) }}">{{ $tsfs->modelo }}</a></td>
-                    @endforeach
+                    <td><a href="{{ route('Tsf.show', $vars->tsfs->id) }}">{{ $vars->tsfs->modelo }}</a></td>
                     <td>{{ $vars->modelo }}</td>
                     <td>{{ $vars->nacionalidad }}</td>
                     <td>{{ $vars->anyo }}</td>

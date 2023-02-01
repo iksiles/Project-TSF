@@ -102,12 +102,8 @@ class WeaponsController extends Controller
     public function show($id)
     {
         $wep = Weapons::findOrFail($id);
-        $modelTSF = $wep->modelo_TSF;
-
-        $tsf = Tsf::where('modelo','=',$modelTSF)->get();
-        echo $tsf;
         // <a class="btn btn-secondary" href="{{ route('Tsf.show', $wep->modelo_TSF = $tsf->modelo && $tsf->modelo = $tsf->id) }}">{{ $wep->modelo_TSF }}</a> 
-        return view('Tsf.verW', ['wep' => $wep, 'tsf' => $tsf]);
+        return view('Tsf.verW', ['wep' => $wep]);
     }
 
     /**

@@ -1,88 +1,10 @@
 <!DOCTYPE html>
 
 <head>
-    <html lang="en">
-    <meta charset="UTF-8">
     @include('Tsf.layouts.boot')
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/editar.css') }}">
     <title>{{ $var->modelo }} - Añadir</title>
-    <style>
 
-body {
-
-    margin: auto;
-
-    padding: 50px;
-
-}
-
-nav {
-    margin: 0px;
-    padding: auto 16px;
-}
-
-input[type=text], select {
-
-    width: 100%;
-
-    padding: 12px 20px;
-
-    margin: 8px 0;
-
-    display: inline-block;
-
-    border: 1px solid #ccc;
-
-    border-radius: 4px;
-
-    box-sizing: border-box;
-
-}
-
-input[type=submit] {
-
-    width: 100%;
-
-    background-color: #4CAF50;
-
-    color: white;
-
-    padding: 14px 20px;
-
-    margin: 8px 0;
-
-    border: none;
-
-    border-radius: 4px;
-
-    cursor: pointer;
-
-}
-
-input[type=submit]:hover {
-
-    background-color: #45a049;
-
-}
-
-div {
-
-    border-radius: 5px;
-
-    background-color: #f2f2f2;
-
-    padding: 20px;
-    
-}
-
-p {
-    color: red;
-}
-
-h2 {
-    margin: 50px auto;
-}
-</style>
 </head>
 <body class="bg-dark text-light text-center">
     <nav class="navbar navbar-expand-lg bg-light">
@@ -96,16 +18,16 @@ h2 {
         @csrf
         {{ method_field('PUT') }}
         <div class="row text-dark">
-        <label>Modelo:</label>
-        <input type="text" name="modelo" placeholder="Nomenclatura y apodo" value="{{ $var->modelo }}">
-       <label>Nacion:</label>
-            <input type="text" name="nacionalidad" placeholder="Nacion desarrolladora" value="{{ $var->nacionalidad }}">
-       <label>Entrada en servicio:</label>
-            <input type="text" name="anyo" placeholder="Año de entrada en servicio" value="{{ $var->anyo }}">
-        <label>Planta motriz:</label>
-            <input type="text" name="motores" placeholder="Motores que usa" value="{{ $var->motores }}">
-        <label>Imagen:</label>
-            <input type="file" name="img">
+        <label class="form-label">Modelo:</label>
+        <input class="form-control-sm" type="text" name="modelo" placeholder="Nomenclatura y apodo" value="{{ $var->modelo }}">
+       <label class="form-label">Nacion:</label>
+            <input class="form-control-sm" type="text" name="nacionalidad" placeholder="Nacion desarrolladora" value="{{ $var->nacionalidad }}">
+       <label class="form-label">Entrada en servicio:</label>
+            <input class="form-control-sm" type="text" name="anyo" placeholder="Año de entrada en servicio" value="{{ $var->anyo }}">
+        <label class="form-label">Planta motriz:</label>
+            <input class="form-control-sm" type="text" name="motores" placeholder="Motores que usa" value="{{ $var->motores }}">
+        <label class="form-label">Imagen:</label>
+            <input class="form-control" type="file" name="img">
             <input type="submit" value= Guardar>
     </form>
 </body>

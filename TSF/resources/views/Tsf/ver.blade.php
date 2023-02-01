@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
-<head id="app">
-    <meta charset="utf-8">
+<head>
     @include('Tsf.layouts.boot')
     <link rel="stylesheet" href="{{ asset('css/ver.css')}}">
     <title>TSF - {{ $tsf->modelo }}</title>
@@ -22,7 +21,7 @@
             <label><strong>Nacion desarrolladora:</strong> {{ $tsf->nacionalidad }}</label>
             <label><strong>Entrada en servicio:</strong> {{ $tsf->anyo }}</label>
             <label><strong>Planta motriz:</strong> {{ $tsf->motores }}</label>
-            <div class="d-flex flex-start flex-column mx-4">
+            <div class="mx-4">
                 <h3>Variantes</h3>
             @foreach($var as $vars)
                 <a href="{{ route('Tsf.showV', $vars->id) }}">{{ $vars->modelo }}</a>
@@ -56,14 +55,5 @@
     </div>
 </div>
 </div>
-
-<script>
-    // $('.carousel').carousel({
-        //     interval: 2000
-        // });
-        // $()
-
-    </script>
-
 </body>
 </html>
