@@ -18,7 +18,7 @@ class VariantsController extends Controller
     {
         $var = Variants::orderBy('modelo','asc')->paginate(15);
 
-            return view('Tsf.Variants', ['var'=>$var]);
+            return view('Tsf.variants', ['var'=>$var]);
 
     }
 
