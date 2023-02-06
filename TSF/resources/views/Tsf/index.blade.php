@@ -59,5 +59,5 @@
         </table>
         {{ $tsf->links() }}
     </body>
-
+    @include('Tsf.layouts.footer')
 </html>

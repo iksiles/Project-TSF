@@ -19,7 +19,8 @@ class TsfController extends Controller
     public function index()
     {
         $tsf = Tsf::orderBy('id','asc')->paginate(15);
-        return view('Tsf.index', compact('tsf'));
+        $usu = session('usuario');
+        return view('Tsf.index', compact('tsf', 'usu'));
     }
 
     /**
