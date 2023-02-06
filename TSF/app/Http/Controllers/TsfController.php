@@ -125,7 +125,6 @@ class TsfController extends Controller
             $ruta = public_path("img/tsf/");
 
             copy($img,$ruta.$nomImg);
-            unlink(public_path('img/tsf/'.$tsf->img));
             $tsf->img = $nomImg;
         };
 

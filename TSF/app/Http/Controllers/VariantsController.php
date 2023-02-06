@@ -18,7 +18,7 @@ class VariantsController extends Controller
     {
         $var = Variants::orderBy('modelo','asc')->paginate(15);
 
-            return view('Tsf.Variants', ['var'=>$var]);
+            return view('Tsf.variants', ['var'=>$var]);
 
     }
 
@@ -125,7 +125,6 @@ class VariantsController extends Controller
             $ruta = public_path("img/variants/");
 
             copy($img,$ruta.$nomImg);
-            unlink(public_path('img/variants/'.$var->img));
             $var->img = $nomImg;
         };
 

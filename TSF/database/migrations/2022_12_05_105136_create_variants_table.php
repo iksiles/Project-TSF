@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('variants', function (Blueprint $table) {
             $table->id();
-            $table->string('modelo', 40);
-            $table->string('nacionalidad', 40);
+            $table->string('modelo', 75);
+            $table->string('nacionalidad', 75);
             $table->integer('anyo');
-            $table->string('motores', 40);
-            $table->string('img', 30);
-            $table->string('type', 30);
-            $table->string('modelo_ORG', 40)->index();
+            $table->string('motores', 75);
+            $table->string('img', 75);
+            $table->string('type', 10);
+            $table->string('modelo_ORG', 75)->index();
             $table->foreign('modelo_ORG')->references('modelo')->on('tsfs')->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });

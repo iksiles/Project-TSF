@@ -180,7 +180,6 @@ class WeaponsController extends Controller
             $ruta = public_path("img/weapons/");
 
             copy($img,$ruta.$nomImg);
-            unlink(public_path('img/weapons/'.$wep->imgW));
             $wep->imgW = $nomImg;
         };
         $wep->save();

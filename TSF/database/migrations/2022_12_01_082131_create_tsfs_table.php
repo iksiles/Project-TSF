@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('tsfs', function (Blueprint $table) {
             $table->id();
-            $table->string('modelo', 40)->index();
-            $table->string('nacionalidad', 40);
+            $table->string('modelo', 75)->index();
+            $table->string('nacionalidad', 75);
             $table->integer('anyo');
-            $table->string('motores', 40);
-            $table->string('img', 30);
-            $table->string('type', 30);
+            $table->string('motores', 75);
+            $table->string('img', 75);
+            $table->string('type', 10);
             $table->timestamps();
         });
     }
